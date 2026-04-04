@@ -9,10 +9,13 @@ extends Node
 var current_state : State
 
 func _ready() -> void:
-	STATES = get_states()
-	
-	for parameter in PARAMETERS:
-		parameter.emitted.connect(parameter_signal_emitted.bind(parameter))
+	if Engine.is_editor_hint():
+		STATES = get_states()
+	else:
+		STATES = get_states()
+		
+		for parameter in PARAMETERS:
+			parameter.emitted.connect(parameter_signal_emitted.bind(parameter))
 	
 	current_state = start_state
 
