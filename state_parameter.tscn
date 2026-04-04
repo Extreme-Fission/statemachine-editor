@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d4dkw8bhgfnsf"]
+
+[node name="Parameter" type="HBoxContainer" unique_id=1914656969]
+offset_right = 225.0
+offset_bottom = 31.0
+
+[node name="Label" type="LineEdit" parent="." unique_id=333157643]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Name"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=234999318]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "float"
+popup/item_0/id = 0
+popup/item_1/text = "int"
+popup/item_1/id = 1
+popup/item_2/text = "bool"
+popup/item_2/id = 2
+popup/item_3/text = "Signal"
+popup/item_3/id = 3
+
+[node name="Button" type="Button" parent="." unique_id=1266091638]
+layout_mode = 2
+text = "X"

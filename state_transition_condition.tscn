@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bivba1cq3gi3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa7g6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.20511743, 0.20511743, 0.20511743, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.1148968, 0.11489681, 0.1148968, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="state_transition_condition" type="FoldableContainer" unique_id=604208242]
+offset_right = 191.0
+offset_bottom = 168.0
+folded = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=740151899]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=839276189]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=129333851]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1862104956]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Variable:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1507151617]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Type:"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1221120178]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Trigger:"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=233925272]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Value:"
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=133375232]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1308701473]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_pa7g6")
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=637181876]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 4
+popup/item_0/text = "float"
+popup/item_0/id = 0
+popup/item_1/text = "int"
+popup/item_1/id = 1
+popup/item_2/text = "bool"
+popup/item_2/id = 2
+popup/item_3/text = "Signal"
+popup/item_3/id = 3
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1003619162]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 4
+popup/item_0/text = "Greater"
+popup/item_0/id = 0
+popup/item_1/text = "Less"
+popup/item_1/id = 1
+popup/item_2/text = "Equal"
+popup/item_2/id = 2
+popup/item_3/text = "NotEqual"
+popup/item_3/id = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=133291336]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1367445567]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_pa7g6")
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1572451005]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1749309865]
+layout_mode = 2
+text = "Delete Condition"

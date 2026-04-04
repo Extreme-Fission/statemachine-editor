@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://7ayg15bm56pi"]
+
+[ext_resource type="Script" uid="uid://btw83v45y4rxp" path="res://addons/statemachine/statemachine_editor.gd" id="1_ywn1x"]
+[ext_resource type="PackedScene" uid="uid://cjq72dn5u2d04" path="res://addons/statemachine/state_graph_node.tscn" id="2_6cvhk"]
+[ext_resource type="PackedScene" uid="uid://d4dkw8bhgfnsf" path="res://addons/statemachine/state_parameter.tscn" id="3_ip538"]
+[ext_resource type="PackedScene" uid="uid://by2y7ak6dcowg" path="res://addons/statemachine/state_transition.tscn" id="4_65mjo"]
+[ext_resource type="PackedScene" uid="uid://bivba1cq3gi3m" path="res://addons/statemachine/state_transition_condition.tscn" id="5_vw0oq"]
+
+[node name="StateMachineEditor" type="Control" unique_id=1723567269]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -729.0
+offset_top = -286.0
+offset_right = 729.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ywn1x")
+state_graph_node = ExtResource("2_6cvhk")
+parameter_node = ExtResource("3_ip538")
+transition_node = ExtResource("4_65mjo")
+condition_node = ExtResource("5_vw0oq")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=553911765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphEdit" type="GraphEdit" parent="HSplitContainer" unique_id=26691046]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+scroll_offset = Vector2(-50, 0)
+right_disconnects = true
+connection_lines_curvature = 0.0
+zoom_max = 2.0
+show_zoom_label = true
+
+[node name="Button" type="Button" parent="HSplitContainer/GraphEdit" unique_id=1263500430]
+visible = false
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 495.0
+offset_bottom = 45.0
+text = "+ New State"
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer" unique_id=1294103870]
+layout_mode = 2
+current_tab = 0
+clip_tabs = false
+
+[node name="Parameters" type="ScrollContainer" parent="HSplitContainer/TabContainer" unique_id=916400286]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="Parameters" type="VBoxContainer" parent="HSplitContainer/TabContainer/Parameters" unique_id=67775954]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/TabContainer/Parameters/Parameters" unique_id=1006698544]
+layout_mode = 2
+
+[node name="ParameterSearch" type="LineEdit" parent="HSplitContainer/TabContainer/Parameters/Parameters/HBoxContainer" unique_id=1831320796]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search"
+
+[node name="ParameterAddMenu" type="MenuButton" parent="HSplitContainer/TabContainer/Parameters/Parameters/HBoxContainer" unique_id=410633410]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "new"
+item_count = 4
+popup/item_0/text = "float"
+popup/item_0/id = 0
+popup/item_1/text = "int"
+popup/item_1/id = 1
+popup/item_2/text = "bool"
+popup/item_2/id = 2
+popup/item_3/text = "signal"
+popup/item_3/id = 3
+
+[node name="Transitions" type="ScrollContainer" parent="HSplitContainer/TabContainer" unique_id=171820920]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 1
+
+[node name="Transitions" type="VBoxContainer" parent="HSplitContainer/TabContainer/Transitions" unique_id=713032406]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 1
+
+[node name="TransitionAddButton" type="Button" parent="HSplitContainer/TabContainer/Transitions/Transitions" unique_id=1015497925]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New transition"
