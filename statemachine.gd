@@ -58,9 +58,9 @@ func _process(delta: float) -> void:
 func check_trigger(value : float, trigger_value : float, trigger_condition : int) -> bool:
 	match trigger_condition:
 		StateCondition.TriggerConditionEnum.Greater:
-			if value >= trigger_value: return true
+			if value > trigger_value: return true
 		StateCondition.TriggerConditionEnum.Less:
-			if value <= trigger_value: return true
+			if value < trigger_value: return true
 		StateCondition.TriggerConditionEnum.Equal:
 			if value == trigger_value: return true
 		StateCondition.TriggerConditionEnum.NotEqual:
