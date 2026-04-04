@@ -13,7 +13,7 @@ func _disable_plugin() -> void:
 	pass
 
 func _enter_tree() -> void:
-	var dock_scene = preload("res://addons/statemachine/statemachine_editor.tscn").instantiate()
+	var dock_scene = preload("res://addons/statemachine-editor/statemachine_editor.tscn").instantiate()
 	dock = EditorDock.new()
 	dock.add_child(dock_scene)
 	dock.title = "Statemachine Editor"
