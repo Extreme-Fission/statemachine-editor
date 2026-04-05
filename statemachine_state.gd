@@ -7,6 +7,7 @@ extends Node
 
 func _ready() -> void:
 	set_process(false)
+	set_physics_process(false)
 
 func _process(delta: float) -> void:
 	pass
