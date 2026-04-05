@@ -24,9 +24,7 @@ func _process(delta: float) -> void:
 		STATES = get_states()
 	else:
 		if current_state:
-			current_state.set_process(true)
-			current_state.set_physics_process(true)
-			current_state._start()
+			current_state.is_current = true
 			for transition in current_state.transitions:
 				var to_state : State
 				for state in STATES:
@@ -84,10 +82,10 @@ func parameter_signal_emitted(parameter : Parameter):
 				transition(current_state, to_state)
 
 func transition(from_state : State, to_state : State):
-	from_state.set_process(false)
-	from_state.set_physics_process(false)
+	from_state.is_current = false
 	from_state._stop()
 	current_state = to_state
+	current_state._start()
 
 func get_states() -> Array:
 	var states : Array[State]

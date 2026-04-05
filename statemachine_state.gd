@@ -5,9 +5,10 @@ extends Node
 
 @export var node_graph_position : Vector2 = Vector2.ZERO
 
+var is_current : bool = false
+
 func _ready() -> void:
-	set_process(false)
-	set_physics_process(false)
+	pass
 
 func _process(delta: float) -> void:
 	pass
