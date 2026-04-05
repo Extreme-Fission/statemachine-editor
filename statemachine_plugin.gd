@@ -4,14 +4,6 @@ extends EditorPlugin
 var dock
 var current_state_machine : StateMachine
 
-func _enable_plugin() -> void:
-	# Add autoloads here.
-	pass
-
-func _disable_plugin() -> void:
-	# Remove autoloads here.
-	pass
-
 func _enter_tree() -> void:
 	var dock_scene = preload("res://addons/statemachine-editor/statemachine_editor.tscn").instantiate()
 	dock = EditorDock.new()
@@ -36,8 +28,6 @@ func _handles(object) -> bool:
 	else:
 		return false
 	
-	#return object is StateMachine or object is State
-
 func _edit(object):
 	if object:
 		dock.make_visible()
@@ -46,7 +36,5 @@ func _edit(object):
 		dock.close()
 
 func _exit_tree() -> void:
-	# Remove the dock.
 	remove_dock(dock)
-	# Erase the control from the memory.
 	dock.queue_free()

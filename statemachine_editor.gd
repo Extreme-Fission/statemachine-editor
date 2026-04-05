@@ -61,7 +61,6 @@ func _on_draw_layer_draw() -> void:
 			
 			draw_layer.draw_line(from_pos, to_pos, Color.WHITE, 1, true)
 			
-			# arrow
 			var mid_pos = (from_pos + to_pos) * 0.5
 			var direction = (to_pos - from_pos).normalized()
 			var arrow_size = 10.0 * graph_edit.zoom
@@ -229,7 +228,7 @@ func add_condition(instance : FoldableContainer, condition : StateCondition, tra
 	condition_instance_inputs.get_child(0).text_submitted.connect(_edit_condition_variable.bind(condition, transition, condition_instance))
 	condition_instance_inputs.get_child(1).item_selected.connect(_edit_condition_type.bind(condition, transition, condition_instance))
 	condition_instance_inputs.get_child(2).item_selected.connect(_edit_condition_trigger.bind(condition, transition, condition_instance))
-	#
+	
 	condition_instance_inputs.get_child(3).get_child(0).text_submitted.connect(_edit_condition_value_line.bind(condition, transition, condition_instance))
 	condition_instance_inputs.get_child(3).get_child(1).toggled.connect(_edit_condition_value_bool.bind(condition, transition, condition_instance))
 	

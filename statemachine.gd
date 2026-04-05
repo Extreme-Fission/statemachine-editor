@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 							if referenced_parameter.value == condition.trigger_value:
 								transition(current_state, to_state)
 						condition.TriggerTypeEnum.Signal:
-							# signal is defined elsewhere
 							pass
 
 func check_trigger(value : float, trigger_value : float, trigger_condition : int) -> bool:
