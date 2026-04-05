@@ -11,3 +11,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
+
+func _start() -> void:
+	pass
+
+func _stop() -> void:
+	pass
