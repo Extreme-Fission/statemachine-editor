@@ -14,6 +14,9 @@ func _ready() -> void:
 	else:
 		STATES = get_states()
 		
+		for i in PARAMETERS.size():
+			PARAMETERS[i] = PARAMETERS[i].duplicate()
+		
 		for parameter in PARAMETERS:
 			parameter.emitted.connect(parameter_signal_emitted.bind(parameter))
 	
