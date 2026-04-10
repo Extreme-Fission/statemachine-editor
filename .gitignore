@@ -1,6 +1,5 @@
 # Godot-specific
 .godot/
-*.uid
 *.import
 *.translation
 *.mono
