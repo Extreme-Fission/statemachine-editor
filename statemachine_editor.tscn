@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://7ayg15bm56pi"]
 
-[ext_resource type="Script" uid="uid://btw83v45y4rxp" path="res://addons/statemachine/statemachine_editor.gd" id="1_ywn1x"]
-[ext_resource type="PackedScene" uid="uid://cjq72dn5u2d04" path="res://addons/statemachine/state_graph_node.tscn" id="2_6cvhk"]
-[ext_resource type="PackedScene" uid="uid://d4dkw8bhgfnsf" path="res://addons/statemachine/state_parameter.tscn" id="3_ip538"]
-[ext_resource type="PackedScene" uid="uid://by2y7ak6dcowg" path="res://addons/statemachine/state_transition.tscn" id="4_65mjo"]
-[ext_resource type="PackedScene" uid="uid://bivba1cq3gi3m" path="res://addons/statemachine/state_transition_condition.tscn" id="5_vw0oq"]
+[ext_resource type="Script" uid="uid://btw83v45y4rxp" path="res://addons/statemachine-editor/statemachine_editor.gd" id="1_ywn1x"]
+[ext_resource type="PackedScene" uid="uid://cjq72dn5u2d04" path="res://addons/statemachine-editor/state_graph_node.tscn" id="2_6cvhk"]
+[ext_resource type="PackedScene" uid="uid://d4dkw8bhgfnsf" path="res://addons/statemachine-editor/state_parameter.tscn" id="3_ip538"]
+[ext_resource type="PackedScene" uid="uid://by2y7ak6dcowg" path="res://addons/statemachine-editor/state_transition.tscn" id="4_65mjo"]
+[ext_resource type="PackedScene" uid="uid://bivba1cq3gi3m" path="res://addons/statemachine-editor/state_transition_condition.tscn" id="5_vw0oq"]
 
 [node name="StateMachineEditor" type="Control" unique_id=1723567269]
 layout_mode = 3
@@ -35,7 +35,6 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-scroll_offset = Vector2(-50, 0)
 right_disconnects = true
 connection_lines_curvature = 0.0
 zoom_max = 2.0
