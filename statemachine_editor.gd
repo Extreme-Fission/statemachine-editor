@@ -215,7 +215,7 @@ func add_condition(instance : FoldableContainer, condition : StateCondition, tra
 	var condition_instance : FoldableContainer = condition_node.instantiate()
 	var condition_instance_inputs = condition_instance.get_child(0).get_child(0).get_child(1)
 	
-	edit_condition_name(condition, instance)
+	edit_condition_name(condition, condition_instance)
 	
 	condition_instance_inputs.get_child(0).text = condition.variable_name
 	condition_instance_inputs.get_child(1).selected = condition.trigger_type
@@ -278,9 +278,21 @@ func edit_condition_type(condition : StateCondition, condition_instance : Foldab
 		condition_instance_inputs.get_child(0).get_child(2).visible = true
 		
 func edit_condition_name(condition : StateCondition, condition_instance : FoldableContainer):
-	condition_instance.title = condition.variable_name + " " + \
+	var trigger_string : String = "NULL"
+	
+	if condition.trigger_type == 0:
+		trigger_string = str(condition.trigger_value)
+	elif condition.trigger_type == 1:
+		trigger_string = str(int(condition.trigger_value))
+	elif condition.trigger_type == 2:
+		trigger_string = "true" if condition.trigger_value == 1.0 else "false"
+	elif condition.trigger_type == 3:
+		trigger_string = "emitted"
+	
+	condition_instance.title = str(condition.TriggerTypeEnum.find_key(condition.trigger_type)) + " " + \
+		condition.variable_name + " " + \
 		condition.TriggerConditionEnum.find_key(condition.trigger_condition) + " " + \
-		str(condition.trigger_value)
+		trigger_string
 	
 func _edit_condition_trigger(id : int, condition : StateCondition, transition : StateTransition, condition_instance):
 	transition.conditions[transition.conditions.find(condition)].trigger_condition = id
